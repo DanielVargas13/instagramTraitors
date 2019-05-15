@@ -10,7 +10,8 @@ var int_scrollToEndFollowers;
 btn_followers.click();
 function isFollowersDivReady() {
 	//div of list of followers
-	div_followers = document.querySelector('.isgrP');
+	div_followers = document.querySelector('body').children;
+	div_followers = div_followers[div_followers.length-1].querySelector('ul').parentElement;
    	if ( typeof(div_followers) !== "undefined" && div_followers !== null ) {
 		int_scrollToEndFollowers = setInterval(scrollToEndFollowers, 100);
 		clearInterval(int_isFollowersDivReady);
@@ -42,7 +43,8 @@ function following() {
 	var int_scrollToEndFollowing;
 	function isFollowingDivReady() {
 		//div of list of following
-		div_following = document.querySelector('.isgrP');
+		div_following = document.querySelector('body').children;
+		div_following = div_following[div_following.length-1].querySelector('ul').parentElement;
 		if ( typeof(div_following) !== "undefined" && div_following !== null ) {
 			int_scrollToEndFollowing = setInterval(scrollToEndFollowing, 100);
 			clearInterval(int_isFollowingDivReady);
